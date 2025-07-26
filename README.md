@@ -1,5 +1,33 @@
 # La Caja
 
+Bienvenidos al repositorio oficial de **La Caja**, un proyecto colaborativo desarrollado en Unity.
+Este documento explica cómo colaborar, mantener el orden y compartir avances fácilmente, incluso si no usás Git o GitHub.
+
+---
+
+## 🚀 ¿Qué necesitamos?
+
+### Para abrir el proyecto:
+🔹 Unity Hub (https://unity.com/unity-hub)
+🔹 Editor version 6000.1.11f1
+🔹 Git + Git LFS (solo si vas a usar Git)
+🔹 Este repositorio: (https://github.com/juanignaciojuan/la-caja)
+
+---
+
+## 📁 Estructura del Proyecto
+
+Mantener la organización dentro de la carpeta:
+
+Assets/
+├── Arte/
+├── Audio/
+├── Escenas/
+├── Modelos/
+├── Prefabs/
+├── UI/
+└── Scripts/
+
 ## 🚦 Pautas del Proyecto
 
 Este repositorio es la versión oficial y estable del proyecto. Es mantenida por el coordinador (Juan).
