@@ -20,14 +20,14 @@ Export as `.unitypackage`:
 ### 💡 Notas a los miembros del equipo
 
 - No modificar `Assets/Scenes/MainScene.unity` directamente.
-- Agregá tus iniciales o tu nombre a los archivos que creásor (por ejemplo, `Radio_Gabriela.prefab`)
+- Agregá tus iniciales o tu nombre a los archivos que creás (por ejemplo, `Radio_Gabriela.prefab`)
 - Para evitar conflictos, solamente Juan va a actualizar los cambios (commit updates) a este repositorio.
-- Obviamente, si querés experimentar podés crear otro proyecto en Unity.
+- Obviamente, si necesitás experimentar algo podés hacerlo en otro proyecto en Unity.
 
 ---
 
 ### 🔐 Reglas de Git (dev)
 
-- Only Juan pushes to `main` and manages branches.
+- Solamente Juan actualiza el `main` (pushes to main) y administra las ramas (branches).
 - Git LFS está activado para los archivos pesados (.fbx, .png, .wav, etc.)
 
