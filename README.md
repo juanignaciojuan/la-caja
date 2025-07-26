@@ -5,6 +5,10 @@ Este documento explica cómo colaborar, mantener el orden y compartir avances f�
 
 ---
 
+## 🚦 Pautas del Proyecto
+
+Este repositorio es la versión oficial y estable del proyecto. Es mantenida por el coordinador (Juan).
+
 ## 🚀 ¿Qué necesitamos?
 
 ### Para abrir el proyecto:
@@ -28,14 +32,18 @@ Assets/
 ├── UI/
 └── Scripts/
 
-## 🚦 Pautas del Proyecto
-
-Este repositorio es la versión oficial y estable del proyecto. Es mantenida por el coordinador (Juan).
-
 ### 🧠 Si sos parte del equipo (diseño, audio, arte, narrativa):
 
 - No es necesario que uses GitHub.
 - Podés trabajar los assets localmente y enviarlos a Juan para su integración.
+
+1. 🎨 Trabajá en tus archivos como prefieras (Blender, Photoshop, Illustrator, DAW, etc).
+2. 📂 Organizá los archivos en carpetas:  
+   Ejemplo:  /Audio/ambientes/ruinas_loop_01.wav
+3. 📝 Agregá un archivo de texto si necesitás explicar qué hiciste o cómo usarlo.
+4. 🚚 Enviá tus archivos por Google Drive o por mail a Juan.
+
+**Yo (Juan)** me encargo de agregar tus cambios al proyecto oficial y mantener todo organizado.
 
 ### 🧳 Cómo enviar tus avances?
 
