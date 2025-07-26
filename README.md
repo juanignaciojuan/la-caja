@@ -1,36 +1,33 @@
-# La Caja - Game Project Repository
+# La Caja
 
-## 🚦 Project Guidelines
+## 🚦 Pautas del Proyecto
 
-This repository is the **official, stable version** of the project. It is maintained by the coordinator (Juan).
+Este repositorio es la versión oficial y estable del proyecto. Es mantenida por el coordinador (Juan).
 
-### 🧠 If you are part of the team (design, audio, art, writing):
+### 🧠 Si sos parte del equipo (diseño, audio, arte, narrativa):
 
-- You are **not required to use GitHub**.
-- You can work on assets locally and send them to Juan for integration.
+- No es necesario que uses GitHub.
+- Podés trabajar los assets localmente y enviarlos a Juan para su integración.
 
-### 🧳 How to Send Your Work
+### 🧳 Cómo enviar tus avances?
 
-Please send assets in one of these ways:
-
-#### 🎯 Option A - Preferred
 Export as `.unitypackage`:
-1. In Unity, right-click your files or folders (like Prefabs, Models, etc.)
-2. Select `Export Package...` (✅ include dependencies)
-3. Name it clearly (e.g., `environment-props-v2.unitypackage`)
-4. Send via Google Drive (https://drive.google.com/drive/folders/1ulJZbWsvYNMcb7rE0yE-O7Vr9DFeMjEU?usp=drive_link)
+1. En Unity, botón derecho a tus archivos o carpetas (como Prefabs, Models, etc.)
+2. Seleccioná `Export Package...` (✅ include dependencies)
+3. Nombralo claramente (por ejemplo, `environment-props-v2.unitypackage`)
+4. Envialo por Google Drive (https://drive.google.com/drive/folders/1ulJZbWsvYNMcb7rE0yE-O7Vr9DFeMjEU?usp=drive_link)
 
-### 💡 Notes for Team Members
+### 💡 Notas a los miembros del equipo
 
-- Don't modify `Assets/Scenes/MainScene.unity` directly unless told.
-- Add your initials or name to files you create (e.g., `Radio_Gabriela.prefab`)
-- Only Juan will commit updates to this repository to avoid conflicts.
-- If you want to experiment, you can create your own Unity project.
+- No modificar `Assets/Scenes/MainScene.unity` directamente.
+- Agregá tus iniciales o tu nombre a los archivos que creásor (por ejemplo, `Radio_Gabriela.prefab`)
+- Para evitar conflictos, solamente Juan va a actualizar los cambios (commit updates) a este repositorio.
+- Obviamente, si querés experimentar podés crear otro proyecto en Unity.
 
 ---
 
-### 🔐 Git Rules (for developers)
+### 🔐 Reglas de Git (dev)
 
 - Only Juan pushes to `main` and manages branches.
-- Git LFS is enabled for large files (.fbx, .png, .wav, etc.)
+- Git LFS está activado para los archivos pesados (.fbx, .png, .wav, etc.)
 
