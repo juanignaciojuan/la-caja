@@ -1,6 +1,6 @@
 # La Caja
 
-Bienvenidos al repositorio oficial de **La Caja**, un proyecto colaborativo desarrollado en Unity.
+Bienvenidos al repositorio oficial de **La Caja**.
 Este documento explica cómo colaborar, mantener el orden y compartir avances fácilmente, incluso si no usás Git o GitHub.
 
 ---
@@ -9,13 +9,40 @@ Este documento explica cómo colaborar, mantener el orden y compartir avances f�
 
 Este repositorio es la versión oficial y estable del proyecto.
 
-## 🚀 ¿Qué necesitamos?
+### 🛠️ Requisitos previos
 
-### Para abrir el proyecto:
-🔹 Unity Hub (https://unity.com/unity-hub)
-🔹 Editor version 6000.1.11f1
-🔹 Git + Git LFS (solo si vas a usar Git)
-🔹 Este repositorio: (https://github.com/juanignaciojuan/la-caja)
+| Herramienta                 | Enlace de descarga                                 |
+|-----------------------------|----------------------------------------------------|
+| Git                         | https://git-scm.com/downloads                      |
+| Git LFS                     | https://git-lfs.com/                               |
+| Unity Hub                   | https://unity.com/download                         |
+| Unity Editor (6000.1.11f1)  | Desde Unity Hub: versión 2022.3.x LTS con URP      |
+| Visual Studio (opcional)    | https://visualstudio.microsoft.com/es/downloads/  |
+
+---
+
+### 🧭 Pasos para abrir el proyecto correctamente
+
+1. **Instalar Git**
+
+2. **Instalar Git LFS**
+   _abrís una terminal (cmd) y escribís:_
+   git lfs install
+   _le das a enter_
+
+4. **Clonar el repositorio**
+   _en la misma terminal escribís:_
+   git clone https://github.com/juanignaciojuan/la-caja.git
+   cd la-caja
+   _le das a enter_
+
+5. **Descargar los archivos grandes (texturas, sonidos, modelos, etc.)**
+   _lo mismo_
+   git lfs pull
+
+6. **Abrir el proyecto en Unity**
+   Ir a Unity Hub > Add project from disk
+   Seleccionar la carpeta _la-caja_
 
 ---
 
@@ -23,19 +50,20 @@ Este repositorio es la versión oficial y estable del proyecto.
 
 Mantener la organización dentro de la carpeta:
 
-Assets/
-├── Arte/
-├── Audio/
-├── Escenas/
-├── Modelos/
-├── Prefabs/
-├── UI/
-└── Scripts/
+la-caja/
+├── Assets/
+│   ├── Art/
+│   ├── Audio/
+│   ├── Scenes/
+│   ├── Prefabs/
+│   └── Scripts/
+├── ProjectSettings/
+├── Packages/
+├── README.md
+├── .gitignore
+├── .gitattributes
 
-### 🧠 Si sos parte del equipo (diseño, audio, arte, narrativa):
-
-- No es necesario usar GitHub.
-- Podés trabajar los assets localmente.
+### 🧠  No es necesario usar GitHub. Podés trabajar los assets localmente.:
 
 1. 🎨 Trabajá en tus archivos como prefieras (Blender, Photoshop, Illustrator, DAW, etc).
 2. 📂 Organizá los archivos en carpetas:  
@@ -51,10 +79,8 @@ Export as `.unitypackage`:
 3. Nombralo claramente (por ejemplo, `environment-props-v2.unitypackage`)
 4. Envialo por Google Drive (https://drive.google.com/drive/folders/1SIASrEZ_HWh_YSKwI7737ClLEjfELuWa?usp=drive_link)
 
-### 💡 Notas a los miembros del equipo
+### 💡 Importante
 
 - No modificar `Assets/Scenes/MainScene.unity` directamente.
 - Agregá tus iniciales o tu nombre a los archivos que creás (por ejemplo, `Radio_Gabriela.prefab`)
-- Para evitar conflictos, solamente yo voy a actualizar los cambios (commit updates) a este repositorio.
-- Obviamente, si necesitás experimentar algo podés hacerlo en otro proyecto en Unity.
-
+- Para evitar conflictos, yo me ocupo de actualizar los cambios (commit updates) a este repositorio.
