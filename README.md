@@ -16,8 +16,8 @@ Este repositorio es la versión oficial y estable del proyecto.
 | Git                         | https://git-scm.com/downloads                      |
 | Git LFS                     | https://git-lfs.com/                               |
 | Unity Hub                   | https://unity.com/download                         |
-| Unity Editor (6000.1.11f1)  | Desde Unity Hub: versión 2022.3.x LTS con URP      |
-| Visual Studio (opcional)    | https://visualstudio.microsoft.com/es/downloads/  |
+| Unity Editor (6000.1.11f1)  | Desde Unity Hub                                    |
+| Visual Studio (opcional)    | https://visualstudio.microsoft.com/es/downloads/   |
 
 ---
 
@@ -25,20 +25,40 @@ Este repositorio es la versión oficial y estable del proyecto.
 
 1. **Instalar Git**
 
+   _**En mac**_
+   _abrís una terminal (cmd + barra espaciadora)_
+   git --version
+   _le das a enter_
+
 2. **Instalar Git LFS**
+   _**En Windows:**_
    _abrís una terminal (cmd) y escribís:_
    git lfs install
    _le das a enter_
 
+   _**En mac**_
+   _abrís una terminal (cmd + barra espaciadora)_
+   git lfs install
+   _le das a enter_
+
 4. **Clonar el repositorio**
-   _en la misma terminal escribís:_
+
+   _**En Windows**_
+   _primero navegás a la carpeta dedicada escribiendo en la terminal:_
+   cd ubicacion\de\la\carpeta
    git clone https://github.com/juanignaciojuan/la-caja.git
-   cd la-caja
+   _le das a enter_
+
+   _**En mac**_
+   _primero navegás a la carpeta dedicada escribiendo en la terminal:_
+   cd ~/ubicacion/de/la/carpeta
+   git clone https://github.com/juanignaciojuan/la-caja.git
    _le das a enter_
 
 5. **Descargar los archivos grandes (texturas, sonidos, modelos, etc.)**
-   _lo mismo_
+   _escribís en la terminal:_
    git lfs pull
+   _le das a enter_
 
 6. **Abrir el proyecto en Unity**
    Ir a Unity Hub > Add project from disk
