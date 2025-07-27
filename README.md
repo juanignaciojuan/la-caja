@@ -72,11 +72,11 @@ Mantener la organización dentro de la carpeta:
 
 la-caja/
 <br>├── Assets/
-<br>│   ├── Art/
-<br>│   ├── Audio/
-<br>│   ├── Scenes/
-<br>│   ├── Prefabs/
-<br>│   └── Scripts/
+<br>│  ├── Art/
+<br>│  ├── Audio/
+<br>│  ├── Scenes/
+<br>│  ├── Prefabs/
+<br>│  └── Scripts/
 <br>├── ProjectSettings/
 <br>├── Packages/
 <br>├── README.md
