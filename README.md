@@ -25,44 +25,44 @@ Este repositorio es la versión oficial y estable del proyecto.
 
 1. **Instalar Git**
 
-   _**En mac**_
+   _**En mac:**_
    <br>_abrís una terminal (cmd + barra espaciadora)_
-   git --version
-   _le das a enter_
+   <br>git --version
+   <br>_le das a enter_
 
 2. **Instalar Git LFS**
    _**En Windows:**_
-   _abrís una terminal (cmd) y escribís:_
-   git lfs install
-   _le das a enter_
+   <br>_abrís una terminal (cmd) y escribís:_
+   <br>git lfs install
+   <br>_le das a enter_
 
-   _**En mac**_
-   _abrís una terminal (cmd + barra espaciadora)_
-   git lfs install
-   _le das a enter_
+   _**En mac:**_
+   <br>_abrís una terminal (cmd + barra espaciadora)_
+   <br>git lfs install
+   <br>_le das a enter_
 
 4. **Clonar el repositorio**
 
-   _**En Windows**_
-   _primero navegás a la carpeta dedicada escribiendo en la terminal:_
-   cd ubicacion\de\la\carpeta
-   git clone https://github.com/juanignaciojuan/la-caja.git
-   _le das a enter_
+   _**En Windows:**_
+   <br>_primero navegás a la carpeta dedicada escribiendo en la terminal:_
+   <br>cd ubicacion\de\la\carpeta
+   <br>git clone https://github.com/juanignaciojuan/la-caja.git
+   <br>_le das a enter_
 
-   _**En mac**_
-   _primero navegás a la carpeta dedicada escribiendo en la terminal:_
-   cd ~/ubicacion/de/la/carpeta
-   git clone https://github.com/juanignaciojuan/la-caja.git
-   _le das a enter_
+   _**En mac:**_
+   <br>_primero navegás a la carpeta dedicada escribiendo en la terminal:_
+   <br>cd ~/ubicacion/de/la/carpeta
+   <br>git clone https://github.com/juanignaciojuan/la-caja.git
+   <br>_le das a enter_
 
-5. **Descargar los archivos grandes (texturas, sonidos, modelos, etc.)**
-   _escribís en la terminal:_
-   git lfs pull
-   _le das a enter_
+5. **Descargar los archivos grandes (texturas, sonidos, modelos, etc.):**
+   <br>_escribís en la terminal:_
+   <br>git lfs pull
+   <br>_le das a enter_
 
-6. **Abrir el proyecto en Unity**
-   Ir a Unity Hub > Add project from disk
-   Seleccionar la carpeta _la-caja_
+6. **Abrir el proyecto en Unity:**
+   <br>Ir a Unity Hub > Add project from disk
+   <br>Seleccionar la carpeta _la-caja_
 
 ---
 
@@ -71,17 +71,17 @@ Este repositorio es la versión oficial y estable del proyecto.
 Mantener la organización dentro de la carpeta:
 
 la-caja/
-├── Assets/
-│   ├── Art/
-│   ├── Audio/
-│   ├── Scenes/
-│   ├── Prefabs/
-│   └── Scripts/
-├── ProjectSettings/
-├── Packages/
-├── README.md
-├── .gitignore
-├── .gitattributes
+<br>├── Assets/
+<br>│   ├── Art/
+<br>│   ├── Audio/
+<br>│   ├── Scenes/
+<br>│   ├── Prefabs/
+<br>│   └── Scripts/
+<br>├── ProjectSettings/
+<br>├── Packages/
+<br>├── README.md
+<br>├── .gitignore
+<br>├── .gitattributes
 
 ### 🧠  No es necesario usar GitHub. Podés trabajar los assets localmente.:
 
