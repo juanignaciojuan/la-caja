@@ -26,7 +26,7 @@ Este repositorio es la versión oficial y estable del proyecto.
 1. **Instalar Git**
 
    _**En mac**_
-   _abrís una terminal (cmd + barra espaciadora)_
+   <br>_abrís una terminal (cmd + barra espaciadora)_
    git --version
    _le das a enter_
 
