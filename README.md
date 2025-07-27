@@ -34,16 +34,14 @@ Assets/
 
 ### 🧠 Si sos parte del equipo (diseño, audio, arte, narrativa):
 
-- No es necesario que uses GitHub.
-- Podés trabajar los assets localmente y enviarlos a Juan para su integración.
+- No es necesario usar GitHub.
+- Podés trabajar los assets localmente.
 
 1. 🎨 Trabajá en tus archivos como prefieras (Blender, Photoshop, Illustrator, DAW, etc).
 2. 📂 Organizá los archivos en carpetas:  
    Ejemplo:  /Audio/ambientes/ruinas_loop_01.wav
 3. 📝 Agregá un archivo de texto si necesitás explicar qué hiciste o cómo usarlo.
 4. 🚚 Enviá tus archivos por Google Drive (https://drive.google.com/drive/folders/1dEdXM6VfwY3aRlNf3ypusnU06A47kAm-?usp=drive_link)
-
-Yo me encargo de agregar tus cambios al proyecto oficial y mantener todo organizado.
 
 ### 🧳 ¿Cómo enviar tus avances en Unity?
 
@@ -59,11 +57,4 @@ Export as `.unitypackage`:
 - Agregá tus iniciales o tu nombre a los archivos que creás (por ejemplo, `Radio_Gabriela.prefab`)
 - Para evitar conflictos, solamente yo voy a actualizar los cambios (commit updates) a este repositorio.
 - Obviamente, si necesitás experimentar algo podés hacerlo en otro proyecto en Unity.
-
----
-
-### 🔐 Reglas de Git (dev)
-
-- Solamente Juan actualiza el `main` (pushes to main) y administra las ramas (branches).
-- Git LFS está activado para los archivos pesados (.fbx, .png, .wav, etc.)
 
