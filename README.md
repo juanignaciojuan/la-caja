@@ -71,17 +71,17 @@ Este repositorio es la versión oficial y estable del proyecto.
 Mantener la organización dentro de la carpeta:
 
 la-caja/
-<br>├── Assets/
-<br>│  ├── Art/
-<br>│  ├── Audio/
-<br>│  ├── Scenes/
-<br>│  ├── Prefabs/
-<br>│  └── Scripts/
-<br>├── ProjectSettings/
-<br>├── Packages/
-<br>├── README.md
-<br>├── .gitignore
-<br>├── .gitattributes
+<br> ├── Assets/
+<br>│   ├── Art/
+<br>│   ├── Audio/
+<br>│   ├── Scenes/
+<br>│   ├── Prefabs/
+<br>│   └── Scripts/
+<br> ├── ProjectSettings/
+<br> ├── Packages/
+<br> ├── README.md
+<br> ├── .gitignore
+<br> ├── .gitattributes
 
 ### 🧠  No es necesario usar GitHub. Podés trabajar los assets localmente.:
 
