@@ -7,7 +7,7 @@ Este documento explica cómo colaborar, mantener el orden y compartir avances f�
 
 ## 🚦 Pautas del Proyecto
 
-Este repositorio es la versión oficial y estable del proyecto. Es mantenida por el coordinador (Juan).
+Este repositorio es la versión oficial y estable del proyecto.
 
 ## 🚀 ¿Qué necesitamos?
 
