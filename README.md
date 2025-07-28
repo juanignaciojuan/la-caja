@@ -18,6 +18,7 @@ Este repositorio es la versión oficial y estable del proyecto.
 | Unity Hub                      | https://unity.com/download                         |
 | Unity Editor (6000.1.11f1)     | Desde Unity Hub                                    |
 | Visual Studio Code (opcional)  | https://visualstudio.microsoft.com/es/downloads/   |
+| GitHub Desktop (opcional)      | https://desktop.github.com/download/               |
 
 ---
 
