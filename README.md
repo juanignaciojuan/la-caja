@@ -55,7 +55,7 @@ Este repositorio es la versión oficial y estable del proyecto.
    <br>git clone https://github.com/juanignaciojuan/la-caja.git
    <br>_le das a enter_
 
-5. **Descargar los archivos grandes (texturas, sonidos, modelos, etc.):**
+5. **Descargar los archivos pesados (texturas, sonidos, modelos, etc.):**
    <br>_escribís en la terminal:_
    <br>git lfs pull
    <br>_le das a enter_
