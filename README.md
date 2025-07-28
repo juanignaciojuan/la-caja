@@ -11,13 +11,13 @@ Este repositorio es la versión oficial y estable del proyecto.
 
 ### 🛠️ Requisitos previos
 
-| Herramienta                 | Enlace de descarga                                 |
-|-----------------------------|----------------------------------------------------|
-| Git                         | https://git-scm.com/downloads                      |
-| Git LFS                     | https://git-lfs.com/                               |
-| Unity Hub                   | https://unity.com/download                         |
-| Unity Editor (6000.1.11f1)  | Desde Unity Hub                                    |
-| Visual Studio (opcional)    | https://visualstudio.microsoft.com/es/downloads/   |
+| Herramienta                    | Enlace de descarga                                 |
+|--------------------------------|----------------------------------------------------|
+| Git                            | https://git-scm.com/downloads                      |
+| Git LFS                        | https://git-lfs.com/                               |
+| Unity Hub                      | https://unity.com/download                         |
+| Unity Editor (6000.1.11f1)     | Desde Unity Hub                                    |
+| Visual Studio Code (opcional)  | https://visualstudio.microsoft.com/es/downloads/   |
 
 ---
 
