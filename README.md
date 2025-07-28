@@ -26,18 +26,18 @@ Este repositorio es la versión oficial y estable del proyecto.
 1. **Instalar Git**
 
    _**En mac:**_
-   <br>_abrís una terminal (cmd + barra espaciadora)_
+   <br>_abrís una terminal (cmd + barra espaciadora y tipeás "terminal")_
    <br>git --version
    <br>_le das a enter_
 
 2. **Instalar Git LFS**
    _**En Windows:**_
-   <br>_abrís una terminal (cmd) y escribís:_
+   <br>_abrís una terminal (tecla de windows y tipeás cmd)_
    <br>git lfs install
    <br>_le das a enter_
 
    _**En mac:**_
-   <br>_abrís una terminal (cmd + barra espaciadora)_
+   <br>_abrís una terminal (cmd + barra espaciadora y tipeás "terminal")_
    <br>git lfs install
    <br>_le das a enter_
 
