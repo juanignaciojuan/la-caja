@@ -6,9 +6,15 @@ public class FadeIn : MonoBehaviour
     public Image blackScreen;
     public float duration = 5f;
     public AnimationCurve curve;
+    public AudioSource fadeSound;  // 🎵 nuevo
 
     void Start()
     {
+        if (fadeSound != null)
+        {
+            fadeSound.Play();  // 🎵 reproducir sonido
+        }
+
         StartCoroutine(Fade());
     }
 
@@ -16,6 +22,7 @@ public class FadeIn : MonoBehaviour
     {
         float time = 0;
         Color color = blackScreen.color;
+
         while (time < duration)
         {
             float alpha = curve.Evaluate(time / duration);
