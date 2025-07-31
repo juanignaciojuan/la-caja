@@ -1,5 +1,5 @@
 # La Caja
-test
+
 Bienvenidos al repositorio oficial de **La Caja**.
 Este documento explica cómo colaborar, mantener el orden y compartir avances fácilmente, incluso si no usás Git o GitHub.
 
