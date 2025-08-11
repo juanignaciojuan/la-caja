@@ -3,57 +3,147 @@ using UnityEngine.InputSystem;
 
 public class DoorInteraction : MonoBehaviour
 {
+    [Header("Door Settings")]
     [SerializeField] private float rotationAngle = 90f;
+    [SerializeField] private float rotationSpeed = 5f;
+    [SerializeField] private bool requiresKey = false;
     [SerializeField] private float interactionDistance = 5f;
-    [SerializeField] private Transform player; // 🔄 asignación automática abajo
-    [SerializeField] private AudioSource doorSound;
-    [SerializeField] private float rotationSpeed = 5f; // 🔄 suavidad de la animación
+    [SerializeField] private Transform playerCamera;
+    [SerializeField] private GameObject outlineVisual;
+
+    [Header("Audio")]
+    [SerializeField] private AudioSource openSound;
+    [SerializeField] private AudioSource closeSound;
+    [SerializeField] private AudioSource unlockSound;
+    [SerializeField] private AudioSource lockedSound;
 
     private bool doorOpen = false;
-    private Quaternion targetRotation;
     private bool isRotating = false;
+    private bool wasUnlocked = false;
+    private Quaternion targetRotation;
 
-    private void Awake()
+    private Transform pivot; // Rotates this (parent of door)
+
+    private void Start()
     {
-        // 🔁 Si no arrastraste el Player en el Inspector, intenta encontrarlo por tag
-        if (player == null)
-            player = GameObject.FindGameObjectWithTag("Player")?.transform;
+        if (playerCamera == null && Camera.main != null)
+            playerCamera = Camera.main.transform;
+
+        pivot = transform.parent;
+
+        if (outlineVisual != null)
+            outlineVisual.SetActive(false);
     }
 
     private void Update()
     {
-        // 🎯 Solo actuamos si se presiona clic izquierdo
-        if (Mouse.current.leftButton.wasPressedThisFrame)
+        if (playerCamera == null) return;
+
+        Ray ray = new Ray(playerCamera.position, playerCamera.forward);
+        Debug.DrawRay(ray.origin, ray.direction * interactionDistance, Color.blue);
+
+        if (Physics.Raycast(ray, out RaycastHit hit, interactionDistance))
         {
-            float distance = Vector3.Distance(transform.position, player.position);
-            if (distance <= interactionDistance)
+            if (hit.collider.gameObject == gameObject)
             {
-                ToggleDoor();
+                EnableOutline();
+
+                if (Mouse.current.leftButton.wasPressedThisFrame)
+                    TryInteract();
+                else
+                    ShowHoverMessage();
+            }
+            else
+            {
+                DisableOutline();
+                if (UIManager.instance != null)
+                    UIManager.instance.ClearMessage();
             }
         }
-
-        // 🎞️ Si se está rotando, aplicar suavizado
-        if (isRotating)
+        else
         {
-            transform.rotation = Quaternion.Lerp(transform.rotation, targetRotation, Time.deltaTime * rotationSpeed);
+            DisableOutline();
+            if (UIManager.instance != null)
+                UIManager.instance.ClearMessage();
+        }
 
-            // 🔚 Detener rotación si ya casi llegó al ángulo final
-            if (Quaternion.Angle(transform.rotation, targetRotation) < 0.1f)
+        if (isRotating && pivot != null)
+        {
+            pivot.rotation = Quaternion.Lerp(pivot.rotation, targetRotation, Time.deltaTime * rotationSpeed);
+            if (Quaternion.Angle(pivot.rotation, targetRotation) < 0.1f)
             {
-                transform.rotation = targetRotation;
+                pivot.rotation = targetRotation;
                 isRotating = false;
             }
         }
     }
 
+    public void TryInteract()
+    {
+        if (requiresKey && (GameManager.instance == null || !GameManager.instance.hasKey))
+        {
+            if (UIManager.instance != null)
+                UIManager.instance.ShowMessage("Puerta cerrada");
+
+            if (lockedSound != null)
+                lockedSound.Play();
+
+            return;
+        }
+
+        if (requiresKey && !wasUnlocked)
+            Unlock();
+
+        ToggleDoor();
+    }
+
+    public void ShowHoverMessage()
+    {
+        if (requiresKey && (GameManager.instance == null || !GameManager.instance.hasKey))
+        {
+            if (UIManager.instance != null)
+                UIManager.instance.ShowLiveMessage("Puerta cerrada");
+        }
+        else
+        {
+            if (UIManager.instance != null)
+                UIManager.instance.ShowLiveMessage(doorOpen ? "Cerrar puerta" : "Abrir puerta");
+        }
+    }
+
+    public void Unlock()
+    {
+        wasUnlocked = true;
+
+        if (UIManager.instance != null)
+            UIManager.instance.ShowMessage("Puerta desbloqueada");
+
+        if (unlockSound != null)
+            unlockSound.Play();
+    }
+
     private void ToggleDoor()
     {
         float angle = doorOpen ? -rotationAngle : rotationAngle;
-        targetRotation = Quaternion.Euler(0, transform.eulerAngles.y + angle, 0);
+        targetRotation = Quaternion.Euler(0, pivot.eulerAngles.y + angle, 0);
         isRotating = true;
         doorOpen = !doorOpen;
 
-        if (doorSound != null)
-            doorSound.Play();
+        if (doorOpen && openSound != null)
+            openSound.Play();
+        else if (!doorOpen && closeSound != null)
+            closeSound.Play();
+    }
+
+    public void EnableOutline()
+    {
+        if (outlineVisual != null)
+            outlineVisual.SetActive(true);
+    }
+
+    public void DisableOutline()
+    {
+        if (outlineVisual != null)
+            outlineVisual.SetActive(false);
     }
 }

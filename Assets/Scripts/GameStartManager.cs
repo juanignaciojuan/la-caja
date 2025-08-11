@@ -1,7 +1,7 @@
 using UnityEngine;
 using UnityEngine.UI;
 using System.Collections;
-using StarterAssets; // Required for access to FirstPersonController
+using StarterAssets;
 
 public class GameStartManager : MonoBehaviour
 {
@@ -28,12 +28,10 @@ public class GameStartManager : MonoBehaviour
         playButton.onClick.AddListener(BeginGame);
 
         if (playerController != null)
-        {
             playerController.enabled = false;
-        }
     }
 
-    void BeginGame()
+    public void BeginGame()
     {
         playButton.gameObject.SetActive(false);
         Cursor.lockState = CursorLockMode.Locked;
@@ -63,13 +61,10 @@ public class GameStartManager : MonoBehaviour
         blackScreen.color = color;
         blackScreenObject.SetActive(false);
 
-        // Wait until audio finishes
         float waitTime = Mathf.Max(0f, introAudio.clip.length - fadeDuration);
         yield return new WaitForSeconds(waitTime);
 
         if (playerController != null)
-        {
             playerController.enabled = true;
-        }
     }
 }

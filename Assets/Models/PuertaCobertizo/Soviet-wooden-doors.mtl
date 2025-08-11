@@ -1,0 +1,48 @@
+newmtl Solid
+Ka 1.0 1.0 1.0
+Kd 1.0 1.0 1.0
+Ks 0.0 0.0 0.0
+d 1.0
+Ns 0.0
+illum 0
+
+newmtl Soviet-wooden-doors
+Ka 1.0 1.0 1.0
+Kd 1.0 1.0 1.0
+Ks 0.0 0.0 0.0
+d 1.0
+Ns 0.0
+illum 0
+map_Kd Soviet-wooden-doors.jpg
+map_Bump Soviet-wooden-doors_normal.jpg
+
+newmtl Soviet-wooden-doors1
+Ka 1.0 1.0 1.0
+Kd 1.0 1.0 1.0
+Ks 0.0 0.0 0.0
+d 1.0
+Ns 0.0
+illum 0
+map_Kd Soviet-wooden-doors1.jpg
+map_Bump Soviet-wooden-doors_normal1.jpg
+
+newmtl Soviet-wooden-doors2
+Ka 1.0 1.0 1.0
+Kd 1.0 1.0 1.0
+Ks 0.0 0.0 0.0
+d 1.0
+Ns 0.0
+illum 0
+map_Kd Soviet-wooden-doors2.jpg
+map_Bump Soviet-wooden-doors_normal2.jpg
+
+newmtl Soviet-wooden-doors3
+Ka 1.0 1.0 1.0
+Kd 1.0 1.0 1.0
+Ks 0.0 0.0 0.0
+d 1.0
+Ns 0.0
+illum 0
+map_Kd Soviet-wooden-doors3.jpg
+map_Bump Soviet-wooden-doors_normal3.jpg
+
