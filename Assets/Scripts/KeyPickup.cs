@@ -11,6 +11,7 @@ public class KeyPickup : MonoBehaviour
     [SerializeField] private GameObject outlineVisual;
 
     private bool collected = false;
+    private bool isHovered = false; // NEW: tracks hover state
 
     private void Start()
     {
@@ -25,34 +26,35 @@ public class KeyPickup : MonoBehaviour
     {
         if (collected || playerCamera == null) return;
 
-        Debug.DrawRay(playerCamera.position, playerCamera.forward * pickupDistance, Color.red);
+        bool hitThisFrame = false;
 
+        Debug.DrawRay(playerCamera.position, playerCamera.forward * pickupDistance, Color.red);
         Ray ray = new Ray(playerCamera.position, playerCamera.forward);
 
         if (Physics.Raycast(ray, out RaycastHit hit, pickupDistance, keyLayerMask))
         {
             if (hit.collider.gameObject == gameObject)
             {
-                EnableOutline();
+                hitThisFrame = true;
 
-                if (UIManager.instance != null)
+                if (!isHovered) // just started hovering
+                {
+                    EnableOutline();
                     UIManager.instance.ShowLiveMessage("Tomar la llave");
+                    isHovered = true;
+                }
 
                 if (Mouse.current.leftButton.wasPressedThisFrame)
                     PickupKey();
             }
-            else
-            {
-                DisableOutline();
-                if (UIManager.instance != null)
-                    UIManager.instance.ClearMessage();
-            }
         }
-        else
+
+        // Instantly disable when not looking
+        if (!hitThisFrame && isHovered)
         {
             DisableOutline();
-            if (UIManager.instance != null)
-                UIManager.instance.ClearMessage();
+            UIManager.instance.ClearMessage();
+            isHovered = false;
         }
     }
 
@@ -60,33 +62,19 @@ public class KeyPickup : MonoBehaviour
     {
         collected = true;
 
-        if (GameManager.instance != null)
-            GameManager.instance.hasKey = true;
+        GameManager.instance.hasKey = true;
 
-        if (UIManager.instance != null)
-        {
-            UIManager.instance.ClearMessage();
-            UIManager.instance.ShowMessage("Llave tomada");
-        }
+        UIManager.instance.ClearMessage();
+        UIManager.instance.ShowMessage("Llave tomada");
 
-        if (pickupSound != null)
-            pickupSound.Play();
+        pickupSound?.Play();
 
-        if (doorToUnlock != null)
-            doorToUnlock.Unlock();
+        /*if (doorToUnlock != null)
+            doorToUnlock.Unlock();*/
 
         Destroy(gameObject, pickupSound != null ? pickupSound.clip.length : 0.1f);
     }
 
-    public void EnableOutline()
-    {
-        if (outlineVisual != null)
-            outlineVisual.SetActive(true);
-    }
-
-    public void DisableOutline()
-    {
-        if (outlineVisual != null)
-            outlineVisual.SetActive(false);
-    }
+    public void EnableOutline() => outlineVisual?.SetActive(true);
+    public void DisableOutline() => outlineVisual?.SetActive(false);
 }

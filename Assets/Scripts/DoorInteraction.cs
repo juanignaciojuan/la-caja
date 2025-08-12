@@ -20,9 +20,9 @@ public class DoorInteraction : MonoBehaviour
     private bool doorOpen = false;
     private bool isRotating = false;
     private bool wasUnlocked = false;
+    private bool isHovered = false; // NEW: tracks hover state
     private Quaternion targetRotation;
-
-    private Transform pivot; // Rotates this (parent of door)
+    private Transform pivot;
 
     private void Start()
     {
@@ -39,6 +39,8 @@ public class DoorInteraction : MonoBehaviour
     {
         if (playerCamera == null) return;
 
+        bool hitThisFrame = false;
+
         Ray ray = new Ray(playerCamera.position, playerCamera.forward);
         Debug.DrawRay(ray.origin, ray.direction * interactionDistance, Color.blue);
 
@@ -46,27 +48,30 @@ public class DoorInteraction : MonoBehaviour
         {
             if (hit.collider.gameObject == gameObject)
             {
-                EnableOutline();
+                hitThisFrame = true;
+
+                if (!isHovered) // just started hovering
+                {
+                    EnableOutline();
+                    ShowHoverMessage();
+                    isHovered = true;
+                }
 
                 if (Mouse.current.leftButton.wasPressedThisFrame)
                     TryInteract();
-                else
-                    ShowHoverMessage();
-            }
-            else
-            {
-                DisableOutline();
-                if (UIManager.instance != null)
-                    UIManager.instance.ClearMessage();
             }
         }
-        else
+
+        // If no longer looking at this door → instantly disable
+        if (!hitThisFrame && isHovered)
         {
             DisableOutline();
             if (UIManager.instance != null)
                 UIManager.instance.ClearMessage();
+            isHovered = false;
         }
 
+        // Door rotation
         if (isRotating && pivot != null)
         {
             pivot.rotation = Quaternion.Lerp(pivot.rotation, targetRotation, Time.deltaTime * rotationSpeed);
@@ -80,46 +85,40 @@ public class DoorInteraction : MonoBehaviour
 
     public void TryInteract()
     {
-        if (requiresKey && (GameManager.instance == null || !GameManager.instance.hasKey))
+        if (requiresKey && (!GameManager.instance || !GameManager.instance.hasKey))
         {
-            if (UIManager.instance != null)
-                UIManager.instance.ShowMessage("Puerta cerrada");
-
-            if (lockedSound != null)
-                lockedSound.Play();
-
+            UIManager.instance.ShowMessage("Puerta cerrada");
+            lockedSound?.Play();
             return;
         }
 
         if (requiresKey && !wasUnlocked)
+        {
             Unlock();
-
-        ToggleDoor();
+        }        ToggleDoor();
     }
 
     public void ShowHoverMessage()
     {
-        if (requiresKey && (GameManager.instance == null || !GameManager.instance.hasKey))
+        // If locked, show nothing until clicked
+        if (requiresKey && (!GameManager.instance || !GameManager.instance.hasKey))
         {
-            if (UIManager.instance != null)
-                UIManager.instance.ShowLiveMessage("Puerta cerrada");
+            UIManager.instance.ShowLiveMessage("Abrir la puerta");
         }
         else
         {
-            if (UIManager.instance != null)
-                UIManager.instance.ShowLiveMessage(doorOpen ? "Cerrar puerta" : "Abrir puerta");
+            if (doorOpen)
+                UIManager.instance.ShowLiveMessage("Cerrar la puerta");
+            else
+                UIManager.instance.ShowLiveMessage("Abrir la puerta");
         }
     }
 
     public void Unlock()
     {
         wasUnlocked = true;
-
-        if (UIManager.instance != null)
-            UIManager.instance.ShowMessage("Puerta desbloqueada");
-
-        if (unlockSound != null)
-            unlockSound.Play();
+        UIManager.instance.ShowMessage("Puerta desbloqueada");
+        unlockSound?.Play();
     }
 
     private void ToggleDoor()
@@ -129,21 +128,12 @@ public class DoorInteraction : MonoBehaviour
         isRotating = true;
         doorOpen = !doorOpen;
 
-        if (doorOpen && openSound != null)
-            openSound.Play();
-        else if (!doorOpen && closeSound != null)
-            closeSound.Play();
+        if (doorOpen)
+            openSound?.Play();
+        else
+            closeSound?.Play();
     }
 
-    public void EnableOutline()
-    {
-        if (outlineVisual != null)
-            outlineVisual.SetActive(true);
-    }
-
-    public void DisableOutline()
-    {
-        if (outlineVisual != null)
-            outlineVisual.SetActive(false);
-    }
+    public void EnableOutline() => outlineVisual?.SetActive(true);
+    public void DisableOutline() => outlineVisual?.SetActive(false);
 }
